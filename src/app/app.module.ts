@@ -14,7 +14,7 @@ import { MenuComponent } from './menu/menu.component';
     HeaderComponent,
     FooterComponent,
     WelcomeComponent,
-    MenuComponent
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
