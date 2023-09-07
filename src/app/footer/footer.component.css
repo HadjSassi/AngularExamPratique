@@ -1,0 +1,8 @@
+.Copyright{
+  height: 10rem;
+  background-color:rgb(235, 235, 235);
+  margin-bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
