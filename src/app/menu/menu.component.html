@@ -2,10 +2,11 @@
   <div class="col-2 m-5" *ngFor="let card of menu" (click)="show(card)" style="cursor: pointer">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <h1 class="card-title">{{card[0]}}</h1>
-        <h6 class="card-substitle mb-2 text-body-secondary">{{card[1]}} recipe</h6>
-        <p class="card-text" *ngIf="card[3]">{{card[2]}}</p>
+        <h1 class="card-title">{{card.name}}</h1>
+        <h6 class="card-substitle mb-2 text-body-secondary">{{card.origin}} recipe</h6>
+        <p class="card-text" *ngIf="card.displayed">{{card.description}}</p>
       </div>
     </div>
   </div>
 </div>
+<h1 class="">Estannewna for other better recipes</h1>

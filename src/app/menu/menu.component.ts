@@ -1,22 +1,29 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
-  menu = [
-    ['Kouskous', 'Tunisian', 'lorem ipsum',false],
-    ['Pasta', 'Itialian', 'lorem ipsum',false],
-    ['Ma9rouna bel chocolat', 'Kerkennian', 'lorem ipsum',false],
-    ['Mlou5ya bel 7out', 'Monastiri', 'lorem ipsum',false],
-    ['Slata naya', 'Ben Arous', 'lorem ipsum',false],
-    ['M5are9 w zlayba', 'ajeb', 'lorem ipsum',false]
-  ]
+
+export class MenuComponent implements OnInit{
+  menu : any;
+
+  constructor(private http: HttpClient) {}
 
   show(card:any){
-    card[3] = !card[3];
+    card.displayed = !card.displayed;
+  }
+
+  ngOnInit() : void{
+    const url: string = 'assets/menu.json';
+
+    this.http.get(url).subscribe(
+      (response) => {
+        this.menu = response;
+      }
+    );
   }
 
 }
